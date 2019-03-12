@@ -3,12 +3,26 @@
 @import url(http://fonts.googleapis.com/css?family=Oswald:700,400);
 @import url(http://fonts.googleapis.com/css?family=Open+Sans);
 
+
+#welcome{
+  color: firebrick;
+  text-align: center;
+  line-height: 600px;
+}
+
+#flick{
+  color: firebrick;
+  text-align: center;
+  line-height: 600px;
+}
+
+
+
 #container{
   padding-top: 100px;
 }
 
 body {
-  text-align: right;
   background-color: #fff;
   color: #666;
   font-family: 'Open Sans', arial, sans-serif;
@@ -28,10 +42,7 @@ h1 {
   float: left;
   width: 225px;
   height: 90px;
-<<<<<<< Updated upstream
   background-repeat: no-repeat;
-=======
->>>>>>> Stashed changes
   text-indent: 100%;
   white-space: nowrap;
   overflow: hidden;}
