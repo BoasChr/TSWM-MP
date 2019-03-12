@@ -16,18 +16,56 @@
   line-height: 600px;
 }
 
+#top {
+  position: static;
+  text-align: center;
+  width: 100%;
+  height: 10%px;
+  background-color: rgba(0, 0, 0, 0.05);
+}
 
+#mainSection {
+  background-color: rgba(0, 0, 255, 0.034);
+  width: 50%;
+}
 
-#container{
-  padding-top: 100px;
+#mainSection #left {
+  float: left;
+  text-align: left;
+  width: 35%;
+  height: 100%;
+  position: static;
+  background-color: rgba(255, 0, 85, 0.151);
+}
+
+#mainSection #left .current{
+  color: green;
+  font-weight: bold;
+}
+
+#mainSection #left .resultless{
+  color: rgb(160, 33, 33);
+}
+
+#mainSection #left li:hover{
+  font-style: strike;
+  font-weight: bold;
+}
+
+#mainSection #right {
+  position: relative;
+  float: right;
+  width: 65%;
+  position: static;
+  background-color: rgba(255, 230, 0, 0.116);
 }
 
 body {
+  position: static;
   background-color: #fff;
-  color: #666;
+  color: rgb(37, 37, 37);
   font-family: 'Open Sans', arial, sans-serif;
-  width: 960px;
-  margin: 0 auto 0 auto;}
+}
 
 header {
   display: block;
@@ -36,22 +74,16 @@ header {
   margin-bottom: 30px;}
 
 h1 {
-  font-weight: normal;
-  margin: 28px 0 0 0;
-  color: red;
-  float: left;
-  width: 225px;
-  height: 90px;
-  background-repeat: no-repeat;
-  text-indent: 100%;
-  white-space: nowrap;
-  overflow: hidden;}
+  margin: 0;
+  font-size: 2em;
+  color: firebrick;
+  font-family: oswald, arial, sans-serif;}
 
 h2 {
   font-size: 2.4em;
   margin: 0.7em 0 1.7em 0;
   padding: 0;
-  color: #000;
+  color: #3fbb8a;
   line-height: 1em;
   letter-spacing: -.06em;}
 
@@ -106,49 +138,40 @@ p#selector {margin-top: -40px;}
 
 form {
   margin: 0 0 0 90px;
-  width: 300px;}
-label, input {
-  display: inline-block;}
+  width: 100%;}
+
+  label, input {
+    display: inline-block;}
+
 label {
   display: block;
   text-align: left;
   padding-top: 10px;
   text-transform: uppercase;}
+
 input {
   border: none;
   border-radius: 5px;
-  background-color: #dcdcdc;
+  background-color: #ffffff;
   font-size: 1em;
   line-height: 1em;
-  width: 280px;
-  padding: 6px 10px 6px 10px;}
+  padding: 6px 10px 6px 10px;
+}
+
 input[type=submit] {
   background-color: #1fb684;
   color: #fff;
-  font-weight: bold;
-  clear:left;
-  float: right;
-  width: 8em;
-  padding: 8px 20px 8px 20px;
-  margin-top: 10px;
-  text-transform: uppercase;}
+  font: sans-serif;
+  font-weight: bold; 
+  width: 100px;
+  margin: 1%;
+  padding: 1%;
+  text-transform: uppercase;
+}
+
 input[type=submit]:hover {
-  background-color: #000;
+  background-color: #198f67;
   cursor: pointer;}
-
-
-/* Exchange rates */
-#rates div {
-  background-repeat:   no-repeat;
-  background-position: left center;
-  padding-left: 20px;}
-#rates {padding: 50px 100px 50px 100px;}
-#reload {padding: 0 100px 0 100px;}
-#rates, #reload {text-align: left;}
-.AU {background-image: url('../img/au.png');}
-.UK {background-image: url('../img/gb.png');}
-.US {background-image: url('../img/us.png');}
-
 
 /* Example */
 #event a {

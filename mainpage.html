@@ -6,15 +6,11 @@
 </head>
 
 <body>
-    <p>Body paragraph</p>
-
-    <h1>Body H1</h1>
-    <h2>Body H2</h2>
-    <h3>Body H3</h3>
-        
     <div id="top">
-        <H1>FlickrSearch</H1>
+        <h1>FlickrSearch</h1>
     </div>
+
+<section id="mainSection">
 
     <div id="left" ng-app="searchForm" ng-controller="searchCtrl">
          <!--   (Angular) Search bar -->
@@ -24,39 +20,52 @@
         </form>
 
         <p>{{searchOverview}}</p>
-        <ul id="searchList"></ul>
+        <ul id="searchList"> <!-- Empty search history --></ul>
 
         <script>
             // Variable to keep count of amount of searches \\
             var searches = 0;
             var searchLabel = "";
 
+
             var app = angular.module("searchForm", []);
             app.controller("searchCtrl", function($scope) {
                 $scope.myFunc = function() {
+
+                    if ($scope.keyword == "" || $scope.keyword == " ") return;
+
                     searches++; // Increment searches
-                    newItem = "<li>" + $scope.keyword + "</li>";
+                    $("li").removeClass("current");
+                    newItem = "<li id='" + $scope.keyword + "' class='current'>" + $scope.keyword + "</li>"; // Create new list item using the keyword
                     $("#searchList").prepend(newItem);
 
-                    $scope.keyword = "";
-
-                    if (searches == 1) {
-                        searchLabel = "Last search: ";
-                    } 
-                    else 
-                    {   
-                        searchLabel = "Last " + searches + " searches:";
-                    }
-
+                    // Appropriate label for search history
+                    if (searches == 1) searchLabel = "Last search: ";
+                    else searchLabel = "Last " + searches + " searches:";
                     $scope.searchOverview = searchLabel;
+
+                    // AJAX request --- Moved here from mainpage.js
+                    $.ajax('https://api.flickr.com/services/feeds/photos_public.gne',
+    
+                    {
+                        dataType: 'jsonp',
+                        // Set Tag to be the entry from the Angular searchbar
+                        data: { "tags": $scope.keyword, "format": "json" }
+                    });
+                    // AJAX reply still handled in mainpage.js ( jsonFlickrFeed(json) )
+
+                    $scope.keyword = ""; // Clear searchbar
                 }
             });   
         </script>
     </div>
 
     <div id="right">
-        <p id="Cars" class="test">Tryk på mig</p>
+        <p id="results">This is default text</p>
+        <div id="gallery"></div>
    </div>
+
+</section>
     
     <script src="jquery-1.11.0.js"></script>
     <script src="mainpage.js"></script>
