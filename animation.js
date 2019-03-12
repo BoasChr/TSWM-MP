@@ -1,25 +1,25 @@
 
-
-
 function animateWelcome() {
-    $('#welcome').fadeIn(1500);
-    $('#welcome').fadeOut(1500);
 
     $('#flick').fadeIn(3000);
-    
+
+    $('#flick').animate({ lineHeight: 100, }, 750, 'swing', function () {
+        //declare function to take you to mainpage
+        redirect();
+    });
+};
+
+
+function redirect(){
+    url = "mainpage.html";
+    $(location).attr("href", url);
 }
 
-function animateFlick() {
-}
 
-
-
-$(document).ready(function() {
-    $('#welcome').hide();
+$(document).ready(function () {
     $('#flick').hide();
 
     animateWelcome();
 });
-
 
 
