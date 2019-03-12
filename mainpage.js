@@ -42,15 +42,3 @@ $(".test").on('click', function (e) {
     );
 });
 
-Heyjj
-
-MediaStreamAudioSourceNodeey
-ey
-
-eyy
-eyey
-
-e
-y
-abstract
-abstract
