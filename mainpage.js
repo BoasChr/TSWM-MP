@@ -6,6 +6,7 @@
 //Check:
 //https://api.flickr.com/services/feeds/photos_public.gne?tags=dogss&format=json
 
+
 function jsonFlickrFeed(json) {
 
     //set the content of element with id "container" to empty
@@ -21,13 +22,10 @@ function jsonFlickrFeed(json) {
         if (i == 9)
             return false;
     });
-
 };
 
 //When pressing on element with class "city"
 $(".test").on('click', function (e) {
-
-    $myList = $("li#searches");
 
     //The $.ajax() method with the form $.ajax(url [,settings]) (slide 29)
     //This method returns the URL to jsonFlickrFeed in the form of

@@ -1,39 +1,61 @@
 <!DOCTYPE html>
-<html ng-app>
+<html>
 <head>
     <link rel="stylesheet" href="stylesheet.css" type="text/css">
-    <script src=”https://ajax.googleapis.com/ajax/libs/angularjs/1.0.2/angular.min.js”></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
 </head>
 
-<body ng-app="myApp" ng-controller="myCtrl"> 
-        <p>Body paragraph</p>
+<body>
+    <p>Body paragraph</p>
 
-        <h1>Body H1</h1>
-        <h2>Body H2</h2>
-        <h3>Body H3</h3>
-
-        <p>Body paragraph</p>
+    <h1>Body H1</h1>
+    <h2>Body H2</h2>
+    <h3>Body H3</h3>
         
     <div id="top">
-        <!-- (Angular) Search bar -->
-        <form ng-submit="addToList()">
-            <input ng-model="searchWord">
-            <input submit="submit" value="Search">
-        </form>
-
-        <ul id="searches">
-            <li>Hvad saa</li>
-            <li>Eller hvad</li>
-            <li>Testing</li>
-        </ul>
+        <H1>FlickrSearch</H1>
     </div>
 
-    <div id="left">
-            <p id="Cars" class="test">Tryk på mig</p>
+    <div id="left" ng-app="searchForm" ng-controller="searchCtrl">
+         <!--   (Angular) Search bar -->
+        <form ng-submit="myFunc()">
+            Search for: <input type="text" ng-model="keyword">
+            <input type="submit" value="Search">
+        </form>
+
+        <p>{{searchOverview}}</p>
+        <ul id="searchList"></ul>
+
+        <script>
+            // Variable to keep count of amount of searches \\
+            var searches = 0;
+            var searchLabel = "";
+
+            var app = angular.module("searchForm", []);
+            app.controller("searchCtrl", function($scope) {
+                $scope.myFunc = function() {
+                    searches++; // Increment searches
+                    newItem = "<li>" + $scope.keyword + "</li>";
+                    $("#searchList").prepend(newItem);
+
+                    $scope.keyword = "";
+
+                    if (searches == 1) {
+                        searchLabel = "Last search: ";
+                    } 
+                    else 
+                    {   
+                        searchLabel = "Last " + searches + " searches:";
+                    }
+
+                    $scope.searchOverview = searchLabel;
+                }
+            });   
+        </script>
     </div>
 
     <div id="right">
-         
+        <p id="Cars" class="test">Tryk på mig</p>
    </div>
     
     <script src="jquery-1.11.0.js"></script>
