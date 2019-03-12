@@ -41,4 +41,3 @@ $(".test").on('click', function (e) {
         }
     );
 });
-
