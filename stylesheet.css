@@ -2,23 +2,6 @@
 @import url(http://fonts.googleapis.com/css?family=Open+Sans);
 
 
-
-#clearButton{
-  display: inline-block;
-  padding: 0.3em 1.2em;
-  margin: 0 0.3em 0.3em 0;
-  border-radius: 2em;
-  box-sizing: border-box;
-  text-decoration: none;
-  font-family: 'Roboto', sans-serif;
-  font-weight: 300;
-  color: #FFFFFF;
-  background-color: #4eb5f1;
-  text-align: center;
-  transition: all 0.3s;
-}
-
-
 #welcome{
   color: firebrick;
   text-align: center;
@@ -119,18 +102,22 @@ input {
 }
 
 input[type=submit] {
-  background-color: #b61f1f;
-  color: #fff;
-  font: sans-serif;
-  font-weight: bold; 
-  height: 45px;
-  margin: 1% 1% ;
-  text-transform: uppercase;
+  display: inline-block;
+  padding: 0.3em 1.2em;
+  margin: 0 0.3em 0.3em 0;
+  border-radius: 2em;
+  box-sizing: border-box;
+  text-decoration: none;
+  font-family: 'Roboto', sans-serif;
+  font-weight: 300;
+  color: #FFFFFF;
+  background-color: #4eb5f1;
+  text-align: center;
+  transition: all 0.3s;
 }
 
 input[type=submit]:hover {
-  background-color: #6e1313;
-  cursor: pointer;
+    background-color: #4095c6;
 }
 
 input[type=text] {
