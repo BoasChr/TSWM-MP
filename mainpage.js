@@ -53,11 +53,10 @@ function jsonFlickrFeed(json) {
 
         //for each item returned from json.items (from jsonFlickrFeed)
         $.each(json.items, function (i, item) {
-            //findt the media item and append it to the element
-            //called "container" in your html
+            //find the media item and append it to the element called "gallery" in the html
             $("<img />").attr("src", item.media.m).appendTo("#gallery");
 
-            //when there is 10 images stop
+            //when there are 20 images stop
             if (i == 20) return false;
             
         });
@@ -75,12 +74,12 @@ $(document).on('click', "li", function (e) {
 
     //The $.ajax() method with the form $.ajax(url [,settings]) (slide 29)
     //This method returns the URL to jsonFlickrFeed in the form of
-    //https://api.flickr.com/services/feeds/photos_public.gne?tags=*THE ID OF WHAT YOUR PRESSED*s&format=json
+    //https://api.flickr.com/services/feeds/photos_public.gne?tags=* WHAT YOU TYPED *s&format=json    
     $.ajax('https://api.flickr.com/services/feeds/photos_public.gne',
     
         {
             dataType: 'jsonp',
-            //The tag to search for is the id of the currently pressed city.
+            //The tag to search for is what id the user pressed
             data: { "tags": e.target.id, "format": "json" },
         }
     );
@@ -101,6 +100,5 @@ function clearHistory(){
     searchLabel = "History cleared";
     searches = 0;
     $('#history').innerHTML = searchLabel;
-   // document.getElementById("history").innerHTML = searchLabel;
     $('#gallery').html('');
 }
