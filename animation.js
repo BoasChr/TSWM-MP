@@ -5,21 +5,26 @@ function animateWelcome() {
 
     $('#flick').animate({ lineHeight: 100, }, 750, 'swing', function () {
         //declare function to take you to mainpage
-        redirect();
+        fadeRestIn();
     });
 };
 
 
-function redirect(){
-    url = "mainpage.html";
-    $(location).attr("href", url);
+function fareRestIn(){
+    
+    $('#mainsection').hide();
+    $('#top').hide();
+
 }
 
 
 $(document).ready(function () {
     $('#flick').hide();
-
+    $('#mainsection').hide();
+    $('#top').hide();
+    
     animateWelcome();
 });
+
 
 
