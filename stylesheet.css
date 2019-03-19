@@ -12,7 +12,7 @@
   color: rgb(212, 41, 41);
   text-align: center;
   margin: 0%;
-  font-size: 250%;
+  font-size: 200%;
 }
 
 #animation {
@@ -104,7 +104,6 @@ input[type=submit] {
   color: #fff;
   font: sans-serif;
   font-weight: bold; 
-  width: 100px;
   height: 45px;
   margin: 1% 1% ;
   text-transform: uppercase;
