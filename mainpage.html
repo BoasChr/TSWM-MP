@@ -20,26 +20,12 @@
 
 <section id="mainSection">
 
-    <div id="left">
-        
+    <div id="left">        
 
-        <!-- CLEAR HISTORY BUTTON -->
-        <script>        
-        function clearHistory()
-            {    
-                $("li").remove();
-                searchLabel = "History cleared";
-                searches = 0;
-                document.getElementById("history").innerHTML = searchLabel;
-                $('#gallery').html('');
-
-            }
-        </script>
+        <!-- CLEAR HISTORY BUTTON -->   
 
         <input type="submit" id="clearButton" onclick="clearHistory();" value="Clear history" />
         
-        <!-- <button type="button" id="clearButton" onclick="clearHistory();">Clear history</button> -->
-
         <p id="history"></p>
         <ul id="searchList"> <!-- Empty search history --></ul>
 

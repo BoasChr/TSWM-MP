@@ -53,3 +53,13 @@ $(document).on('click', "li", function (e) {
     $("li").removeClass("current");
     $(this).addClass("current");
 });
+
+
+function clearHistory()
+{    
+    $("li").remove();
+    searchLabel = "History cleared";
+    searches = 0;
+    document.getElementById("history").innerHTML = searchLabel;
+    $('#gallery').html('');
+}
