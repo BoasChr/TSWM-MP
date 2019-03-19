@@ -1,5 +1,3 @@
-/* The Maker Bus Stylesheet */
-
 @import url(http://fonts.googleapis.com/css?family=Oswald:700,400);
 @import url(http://fonts.googleapis.com/css?family=Open+Sans);
 
@@ -11,28 +9,35 @@
 }
 
 #flick{
-  color: firebrick;
+  color: rgb(212, 41, 41);
   text-align: center;
-  padding-top: 25%;
+  margin: 0%;
+  font-size: 250%;
 }
 
-
 #animation {
-  position: static;
+  position: absolute;
+  top: 45%;
   text-align: center;
   width: 100%;
   height: 10%;
+  font-size: 500%;
+  background-color: yellow;
 }
+
 
 #mainSection {
   position: static;
+  display: block;
   width: 100%;
+
 }
 
 #mainSection #left {
   position: fixed;  
   width: 20%;
   padding: 1%;
+  background-color: blue;
 }
 
 #mainSection #left .current{
@@ -53,6 +58,7 @@
   float: right;
   width: 80%;
   padding: 1%;
+  background-color: green;
 }
 
 #mainSection #right #gallery{
@@ -61,8 +67,8 @@
 
 body {
   position: static;
-  background-color: #fff;
-  color: rgb(37, 37, 37);
+  background-color: rgb(60, 60, 60);
+  color: rgb(202, 202, 202);
   font-family: 'Open Sans', arial, sans-serif;
 }
 
@@ -78,18 +84,10 @@ h1 {
   color: firebrick;
   font-family: oswald, arial, sans-serif;}
 
-h2 {
-  font-size: 2.4em;
-  margin: 0.7em 0 1.7em 0;
-  padding: 0;
-  color: #3fbb8a;
-  line-height: 1em;
-  letter-spacing: -.06em;}
-
 h3 {
   margin: 0;
   font-size: 1.4em;
-  color: #3fbb8a; 
+  color: #bb3f3f; 
   font-family: oswald, arial, sans-serif;}
 
 input {
@@ -99,10 +97,11 @@ input {
   font-size: 1em;
   line-height: 1em;
   padding: 6px 10px 6px 10px;
+  font-size: 100%;
 }
 
 input[type=submit] {
-  background-color: #1fb684;
+  background-color: #b61f1f;
   color: #fff;
   font: sans-serif;
   font-weight: bold; 
@@ -113,7 +112,7 @@ input[type=submit] {
 }
 
 input[type=submit]:hover {
-  background-color: #198f67;
+  background-color: #6e1313;
   cursor: pointer;
 }
 

@@ -1,32 +1,42 @@
 
 function animateWelcome() {
 
-    $('#flick').fadeIn(3000);
+    $('#animation').fadeIn(2000);
 
-    $('#flick').animate({ paddingTop: 50, }, 850, 'swing', function () {
-        //declare function to take you to mainpage
+    $('#animation').animate({ 
+        top: "5%",
+        fontSize: "100%",
+        position: "static",
+        }, 850, 'swing', function () { //declare function when animation is done
         fadeRestIn();
     });
 };
 
 
 function fadeRestIn(){
-    
-    $('#mainsection').fadeIn(3000);
-    $('#searchBar').fadeIn(3000);
-    $('#clearButton').fadeIn(3000);
+   
+    $('#clearButton').fadeIn(1500);
+    $('#mainsection').fadeIn(1500);
+    $('#searchBar').fadeIn(1500);
 
 }
 
 
 $(document).ready(function () {
-    $('#flick').hide();
+ // $('#flick').hide();
     $('#mainsection').hide();
     $('#searchBar').hide();
     $('#clearButton').hide();
+    $('#animation').hide();
     
     animateWelcome();
 });
 
 
-
+/* CSS Animation style
+#varANIMATION {
+  position: static;
+  text-align: center;
+  width: 100%;
+  height: 10%;
+}*/
