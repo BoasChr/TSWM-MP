@@ -39,7 +39,7 @@
         <button type="button" id="clearButton" onclick="clearHistory();">Clear history</button>
         
 
-        <p id="history">{{searchOverview}}</p>
+        <p id="history"></p>
         <ul id="searchList"> <!-- Empty search history --></ul>
 
         <script>
@@ -66,7 +66,7 @@
                     // Appropriate label for search history
                     if (searches == 1) searchLabel = "Last search: ";
                     else searchLabel = "Last " + searches + " searches:";
-                    $scope.searchOverview = searchLabel;
+                    document.getElementById("history").innerHTML = searchLabel;
 
                     // AJAX request --- Moved here from mainpage.js
                     $.ajax('https://api.flickr.com/services/feeds/photos_public.gne',
