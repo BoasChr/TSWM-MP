@@ -27,31 +27,32 @@
 
 #flick{
   color: rgb(212, 41, 41);
-  text-align: center;
   margin: 0%;
-  font-size: 200%;
+  padding-top: 25%;
+  font-size: 250%;
 }
 
 #animation {
-  position: absolute;
-  top: 45%;
+  position: static;
   text-align: center;
-  width: 100%;
-  height: 10%;
-  font-size: 500%;
+  padding-top: 0%;
+  width: 99.75%;
+  font-size: 400%;
   background-color: yellow;
 }
 
 
 #mainSection {
-  position: static;
+  position: relative;
   display: block;
-  width: 100%;
+  width: 99.75%;
+  top: 2%;
+  background-color: purple;
 }
 
 #mainSection #left {
-  position: fixed;  
-  width: 20%;
+  position: static;
+  width: 15%;
   padding: 1%;
   background-color: blue;
 }
@@ -72,13 +73,14 @@
 #mainSection #right{
   display: static;
   float: right;
-  width: 80%;
+  width: 50%;
   padding: 1%;
   background-color: green;
 }
 
 #mainSection #right #gallery{
   width: 100%;
+  background-color: pink;
 }
 
 body {
