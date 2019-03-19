@@ -1,7 +1,7 @@
 
 function animateWelcome() {
 
-    $('#animation').fadeIn(0);
+    $('#animation').fadeIn(2000);
     
     $('#animation').animate({ 
         position: "absolute",

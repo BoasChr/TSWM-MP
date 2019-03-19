@@ -34,7 +34,7 @@
             var maxSearches = 20;
             var searchLabel = "";
 
-
+            /* -- ANGULAR -- */
             var app = angular.module("searchForm", []);
             app.controller("searchCtrl", function($scope) {
                 $scope.myFunc = function() {
@@ -51,12 +51,11 @@
 
                     // Appropriate label for search history
                     if (searches == 1){
-                    
                         $('#clearButton').fadeIn(1500);
-                    searchLabel = "Last search: ";
-                }
-                    
+                        searchLabel = "Last search: ";
+                    }
                     else searchLabel = "Last " + searches + " searches:";
+
                     document.getElementById("history").innerHTML = searchLabel;
 
                     // AJAX request --- Moved here from mainpage.js
@@ -64,7 +63,7 @@
     
                     {
                         dataType: 'jsonp',
-                        // Set Tag to be the entry from the Angular searchbar
+                        // Set 'tags' to be the entry from the Angular searchbar
                         data: { "tags": $scope.keyword, "format": "json" }
                     });
                     // AJAX reply still handled in mainpage.js ( jsonFlickrFeed(json) )
@@ -76,12 +75,11 @@
     </div>
 
     <div id="right">
-        <p id="results"></p>
-        <div id="gallery"></div>
+        <p id="results"></p> <!-- Only used for "0 results were found." -->
+        <div id="gallery"></div> <!-- Images will appear here -->
    </div>
 
 </section>
-    
     <script src="jquery-1.11.0.js"></script>
     <script src="mainpage.js"></script>
     <script src="animation.js"></script>
