@@ -14,6 +14,7 @@ function fadeRestIn(){
     
     $('#mainsection').fadeIn(3000);
     $('#searchBar').fadeIn(3000);
+    $('#clearButton').fadeIn(3000);
 
 }
 
@@ -22,6 +23,7 @@ $(document).ready(function () {
     $('#flick').hide();
     $('#mainsection').hide();
     $('#searchBar').hide();
+    $('#clearButton').hide();
     
     animateWelcome();
 });
