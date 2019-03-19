@@ -24,7 +24,7 @@ function jsonFlickrFeed(json) {
             $("<img />").attr("src", item.media.m).appendTo("#gallery");
 
             //when there is 10 images stop
-            if (i == 10) return false;
+            if (i == 9) return false;
             
         });
 };

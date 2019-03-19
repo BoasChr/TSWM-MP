@@ -5,19 +5,19 @@
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
 </head>
 
-<body>
+<body ng-app="searchForm" ng-controller="searchCtrl">
     <div id="top">
-        <h1>FlickrSearch</h1>
+            <h1>FlickrSearch</h1>
+            <!--   (Angular) Search bar -->
+           <form ng-submit="myFunc()">
+               <input type="text" ng-model="keyword" pattern=".{0,20}">
+               <input type="submit" value="Search">
+           </form>
     </div>
 
 <section id="mainSection">
 
-    <div id="left" ng-app="searchForm" ng-controller="searchCtrl">
-         <!--   (Angular) Search bar -->
-        <form ng-submit="myFunc()">
-            Search for: <input type="text" ng-model="keyword">
-            <input type="submit" value="Search">
-        </form>
+    <div id="left">
 
         <p>{{searchOverview}}</p>
         <ul id="searchList"> <!-- Empty search history --></ul>
@@ -25,19 +25,23 @@
         <script>
             // Variable to keep count of amount of searches \\
             var searches = 0;
+            var maxSearches = 20;
             var searchLabel = "";
 
 
             var app = angular.module("searchForm", []);
             app.controller("searchCtrl", function($scope) {
                 $scope.myFunc = function() {
+                    $listHistory = $("#searchList");
 
                     if ($scope.keyword == "" || $scope.keyword == " ") return;
 
-                    searches++; // Increment searches
                     $("li").removeClass("current");
                     newItem = "<li id='" + $scope.keyword + "' class='current'>" + $scope.keyword + "</li>"; // Create new list item using the keyword
-                    $("#searchList").prepend(newItem);
+                    $listHistory.prepend(newItem);
+                    
+                    if ($("li").length > maxSearches) $("li:last").remove(); // If we have more than maxSearches, remove bottom search from history and don't increment.
+                    else searches++; // If we have less than maxSearches increment searches
 
                     // Appropriate label for search history
                     if (searches == 1) searchLabel = "Last search: ";
@@ -61,7 +65,7 @@
     </div>
 
     <div id="right">
-        <p id="results">This is default text</p>
+        <p id="results"></p>
         <div id="gallery"></div>
    </div>
 

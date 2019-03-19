@@ -13,29 +13,26 @@
 #flick{
   color: firebrick;
   text-align: center;
-  line-height: 600px;
+  padding-top: 25%;
 }
 
 #top {
   position: static;
   text-align: center;
   width: 100%;
-  height: 10%px;
+  height: 10%;
   background-color: rgba(0, 0, 0, 0.05);
 }
 
 #mainSection {
-  background-color: rgba(0, 0, 255, 0.034);
-  width: 50%;
+  position: static;
+  width: 100%;
 }
 
 #mainSection #left {
-  float: left;
-  text-align: left;
-  width: 35%;
-  height: 100%;
-  position: static;
-  background-color: rgba(255, 0, 85, 0.151);
+  position: fixed;  
+  width: 20%;
+  padding: 1%;
 }
 
 #mainSection #left .current{
@@ -48,16 +45,18 @@
 }
 
 #mainSection #left li:hover{
-  font-style: strike;
   font-weight: bold;
 }
 
-#mainSection #right {
-  position: relative;
+#mainSection #right{
+  display: static;
   float: right;
-  width: 65%;
-  position: static;
-  background-color: rgba(255, 230, 0, 0.116);
+  width: 80%;
+  padding: 1%;
+}
+
+#mainSection #right #gallery{
+  width: 100%;
 }
 
 body {
@@ -93,62 +92,6 @@ h3 {
   color: #3fbb8a; 
   font-family: oswald, arial, sans-serif;}
 
-nav {
-  float: right;
-  font-family: oswald, arial, sans-serif;
-  width: 600px;
-  padding-top: 30px;
-  font-size: 1.4em;
-  text-align: right;
-  text-transform: uppercase;}
-nav a {
-  padding-left: 30px;}
-nav a:hover, a.current {
-  color: #d71a00;}
-
-a {text-decoration: none; color: #000;}
-
-.third, .event {
-  width: 320px;
-  float: left;
-  text-align: center;}
-
-.event p {border-right: 1px solid #999; }
-#content .event:last-child p {border-right: none;}
-
-.third p {
-  padding: 0 20px 0 20px;
-  margin: 40px 0 20px 0;
-  text-align: left;
-  line-height: 1.4em;}
-
-.intro p {
-  margin: 0 0 0 0;
-  padding: 0 20px 20px 0;}
-
-
-.half {
-  padding-top: 60px;
-  width: 480px;
-  float: left;
-  text-align: center;}
-
-#vote {padding-top: 20px;}
-p#selector {margin-top: -40px;}
-
-form {
-  margin: 0 0 0 90px;
-  width: 100%;}
-
-  label, input {
-    display: inline-block;}
-
-label {
-  display: block;
-  text-align: left;
-  padding-top: 10px;
-  text-transform: uppercase;}
-
 input {
   border: none;
   border-radius: 5px;
@@ -164,55 +107,20 @@ input[type=submit] {
   font: sans-serif;
   font-weight: bold; 
   width: 100px;
-  margin: 1%;
-  padding: 1%;
+  height: 45px;
+  margin: 1% 1% ;
   text-transform: uppercase;
 }
 
 input[type=submit]:hover {
   background-color: #198f67;
-  cursor: pointer;}
+  cursor: pointer;
+}
 
-/* Example */
-#event a {
-  font-family: oswald, arial, sans-serif;
-  font-size: 120%;
-  text-transform: uppercase;
-  text-align: left;
-  line-height: 4.5em;
-  display: block; 
-  height: 120px; width: 100%;}
-#event img {
-  width: 100px;
-  height: 100px;
-  float: left;
-  margin-right: 10px;}
-#event a:hover, #sessions a:hover {color: #1fb684;}
-#sessions a {
-  font-family: oswald, arial, sans-serif;
-  font-size: 120%;}
-#sessions p {
-  margin-top: 2em;}
-#sessions ul {
-  border-left: 1px solid #999;
-  border-right: 1px solid #999;
-  padding: 0 20px 0 20px;
-  margin: 0 0 40px 0;}
-#sessions li {
-  list-style-type: none; 
-  padding: 20px 0 20px 0; 
-  background-color: #fff; 
-  border-top: 1px solid #d6d6d6;
-  text-align: left;}
-#sessions li:first-child {
-  border-top: none;
-  padding-top: 1.8em;}
-#sessions li .time {
-  display: inline-block;
-  width: 60px;}
-#details div {
-  text-align: left;
-  padding: 1.8em 0 0em 1;}
-#details p {
-  padding: 0;
-  margin: 0.8em 0 0 0;}
+input[type=text] {
+  height: 30px;
+  width: 200px;
+  border: 2px solid darkslategrey;
+  border-radius: 4px;
+  margin-left: 130px;
+}
