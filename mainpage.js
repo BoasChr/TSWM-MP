@@ -55,17 +55,14 @@ $(document).on('click', "li", function (e) {
 });
 
 
-
-function clearHistory()
-{    
-
-    
-
-    if(searches < 1){
+//Function called by the clear history button in mainpage.html
+function clearHistory(){
+        if(searches < 1){
         alert("There are no searches to delete");
         return;
     }
-
+    
+    //Remove all items from the li object, empty the gallery, set the label
     $("li").remove();
     searchLabel = "History cleared";
     searches = 0;
