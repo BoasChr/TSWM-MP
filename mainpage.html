@@ -9,17 +9,14 @@
     
  <!--  LOGO ANIMATION  -->  
     <div id="animation">
-                <h2 id="flick">FlickrSearch</h2> 
-            </div>       
-    
-    <div id="top">
-            <h1>FlickrSearch</h1>
-            <!--   (Angular) Search bar -->
-           <form ng-submit="myFunc()">
-               <input type="text" ng-model="keyword" pattern=".{0,20}">
-               <input type="submit" value="Search">
-           </form>
-    </div>
+        <h2 id="flick">FlickrSearch</h2> 
+         
+        <!--   (Angular) Search bar -->
+        <form id="searchBar" ng-submit="myFunc()">
+        <input type="text" ng-model="keyword" pattern=".{0,20}">
+        <input type="submit" value="Search">
+        </form>
+    </div>       
 
 <section id="mainSection">
 
