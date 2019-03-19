@@ -3,11 +3,8 @@ function animateWelcome() {
 
     $('#animation').fadeIn(2000);
     
-    $('#animation').animate({ 
-        paddingTop: "0",
-        fontSize: "100%",
-        top: "2%",
-        
+    $('#animation').animate({        
+        fontSize: "100%", 
         }, 850, 'swing', function () { //callback function when animation is done
         fadeRestIn();
     });
