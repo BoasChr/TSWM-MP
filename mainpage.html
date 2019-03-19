@@ -51,7 +51,12 @@
                     else searches++; // If we have less than maxSearches increment searches
 
                     // Appropriate label for search history
-                    if (searches == 1) searchLabel = "Last search: ";
+                    if (searches == 1){
+                    
+                        $('#clearButton').fadeIn(1500);
+                    searchLabel = "Last search: ";
+                }
+                    
                     else searchLabel = "Last " + searches + " searches:";
                     document.getElementById("history").innerHTML = searchLabel;
 

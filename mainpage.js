@@ -55,8 +55,11 @@ $(document).on('click', "li", function (e) {
 });
 
 
+
 function clearHistory()
 {    
+
+    
 
     if(searches < 1){
         alert("There are no searches to delete");

@@ -18,7 +18,7 @@ function animateWelcome() {
 
 function fadeRestIn(){
    
-    $('#clearButton').fadeIn(1500);
+    
     $('#mainSection').fadeIn(1500);
     $('#searchBar').fadeIn(1500);
 
