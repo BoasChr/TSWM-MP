@@ -1,11 +1,45 @@
+$(function() {
+    var lat, long, cityName = "roses"; // Default search value if we don't find a city
+
+    if (Modernizr.geolocation) {
+        navigator.geolocation.getCurrentPosition(success, fail);
+    }
+    
+    function success(position) {
+        long = position.coords.longitude;
+        lat = position.coords.latitude;
+
+        var geoUrl = "https://geocode.xyz/" + lat + "," + long + "?json=1";
+
+        $.ajax({
+            type: "GET",
+            dataType: 'jsonp',
+            url: geoUrl,
+            async: false,
+            contentType: "application/json; charset=utf-8",
+            success: function (data) {
+                cityName = data.city;
+    
+                $.ajax('https://api.flickr.com/services/feeds/photos_public.gne', {
+                    dataType: 'jsonp',
+                    //The tag to search for is the id of the currently pressed city.
+                    data: { "tags": cityName, "format": "json" },
+                });
+            }
+
+        });
+    }
+
+    function fail(error) {
+        console.warn(error.code + ': ' + error.message);
+    }
+
+});
+
 
 //jsonFlickrFeed is a callback function that we get from the
 //documentation from flickr.com
 //it contains all the data that we want to access
-//It can be found in the documentation of flickr
-//Check:
-//https://api.flickr.com/services/feeds/photos_public.gne?tags=dogss&format=json
-
 function jsonFlickrFeed(json) {
         // Clear the 'gallery'
         $('#gallery').html('');
