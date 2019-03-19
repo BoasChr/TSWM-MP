@@ -1,8 +1,8 @@
 
 function animateWelcome() {
 
-    $('#animation').fadeIn(2000);
-
+    $('#animation').fadeIn(0);
+    
     $('#animation').animate({ 
         position: "absolute",
         paddingTop: "0",
@@ -10,36 +10,22 @@ function animateWelcome() {
         position: "static",
         top: "2%",
         
-        }, 850, 'swing', function () { //declare function when animation is done
+        }, 850, 'swing', function () { //callback function when animation is done
         fadeRestIn();
     });
 };
 
-
-function fadeRestIn(){
-   
-    
+//Callback function called at end of animation animate above
+function fadeRestIn(){       
     $('#mainSection').fadeIn(1500);
     $('#searchBar').fadeIn(1500);
-
 }
 
-
+//When the DOM is loaded and ready hide everything and start animating
 $(document).ready(function () {
-//  $('#flick').hide();
     $('#mainSection').hide();
     $('#searchBar').hide();
     $('#clearButton').hide();
-    $('#animation').hide();
-    
+    $('#animation').hide();    
     animateWelcome();
 });
-
-
-/* CSS Animation style
-#varANIMATION {
-  position: static;
-  text-align: center;
-  width: 100%;
-  height: 10%;
-}*/
