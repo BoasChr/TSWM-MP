@@ -62,7 +62,7 @@ function jsonFlickrFeed(json) {
         });
 };
 
-// When pressing on list element we will search for it using its class
+// When pressing on list element we will search for it using its ID
 // Using document so we are able to find dynamically added items --
 // -- define what we are looking for after event
 $(document).on('click', "li", function (e) {
@@ -74,12 +74,12 @@ $(document).on('click', "li", function (e) {
 
     //The $.ajax() method with the form $.ajax(url [,settings]) (slide 29)
     //This method returns the URL to jsonFlickrFeed in the form of
-    //https://api.flickr.com/services/feeds/photos_public.gne?tags=* WHAT YOU TYPED *s&format=json    
+    //https://api.flickr.com/services/feeds/photos_public.gne?tags=*ID OF WHAT YOU CLICKED*s&format=json    
     $.ajax('https://api.flickr.com/services/feeds/photos_public.gne',
     
         {
             dataType: 'jsonp',
-            //The tag to search for is what id the user pressed
+            //The tag to search for is the ID of the element the user pressed
             data: { "tags": e.target.id, "format": "json" },
         }
     );
