@@ -29,6 +29,7 @@
   display: inline-block;
   width: 99.75%;
   top: 2%;
+  /*background-color: red;*/
 }
 
 #mainSection #left {
@@ -36,6 +37,15 @@
   float: left;
   width: 10%;
   padding: 1%;
+  /*background-color: blue;*/
+}
+
+#mainSection #right{
+  display: static;
+  float: right;
+  width: 85%;
+  padding: 1%;
+  /*background-color: yellow;*/
 }
 
 #mainSection #left .current{
@@ -51,12 +61,7 @@
   font-weight: bold;
 }
 
-#mainSection #right{
-  display: static;
-  float: right;
-  width: 85%;
-  padding: 1%;
-}
+
 
 #mainSection #right #gallery{
   width: 100%;
