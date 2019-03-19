@@ -4,10 +4,8 @@ function animateWelcome() {
     $('#animation').fadeIn(2000);
     
     $('#animation').animate({ 
-        position: "absolute",
         paddingTop: "0",
         fontSize: "100%",
-        position: "static",
         top: "2%",
         
         }, 850, 'swing', function () { //callback function when animation is done

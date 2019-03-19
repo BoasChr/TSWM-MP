@@ -56,7 +56,7 @@
                     }
                     else searchLabel = "Last " + searches + " searches:";
 
-                    document.getElementById("history").innerHTML = searchLabel;
+                    $('#history').innerHTML = searchLabel;
 
                     // AJAX request --- Moved here from mainpage.js
                     $.ajax('https://api.flickr.com/services/feeds/photos_public.gne',

@@ -66,6 +66,7 @@ function clearHistory(){
     $("li").remove();
     searchLabel = "History cleared";
     searches = 0;
-    document.getElementById("history").innerHTML = searchLabel;
+    $('#history').innerHTML = searchLabel;
+   // document.getElementById("history").innerHTML = searchLabel;
     $('#gallery').html('');
 }
