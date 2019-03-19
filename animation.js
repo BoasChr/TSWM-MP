@@ -10,10 +10,10 @@ function animateWelcome() {
 };
 
 
-function fareRestIn(){
+function fadeRestIn(){
     
-    $('#mainsection').hide();
-    $('#top').hide();
+    $('#mainsection').fadeIn(3000);
+    $('#top').fadeIn(3000);
 
 }
 
