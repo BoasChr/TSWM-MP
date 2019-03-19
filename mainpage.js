@@ -53,13 +53,3 @@ $(document).on('click', "li", function (e) {
     $("li").removeClass("current");
     $(this).addClass("current");
 });
-
-/*
-function clearHistory(){
-    
-    $("li").empty();
-
-
-
-}
-*/
