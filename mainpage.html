@@ -20,7 +20,17 @@
 
 <section id="mainSection">
 
-    <div id="left">                     
+    <div id="left">
+        
+        <script>        
+        function clearHistory()
+            {    
+                $("li").empty();
+                searchLabel = "History Deleted";
+                alert(searchLabel);
+                $scope.searchOverview = searchLabel;
+            }
+        </script>
 
         <button type="button" id="clearButton" onclick="clearHistory();">Clear history</button>
         

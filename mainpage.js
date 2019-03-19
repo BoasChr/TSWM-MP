@@ -54,12 +54,12 @@ $(document).on('click', "li", function (e) {
     $(this).addClass("current");
 });
 
-
+/*
 function clearHistory(){
     
     $("li").empty();
 
-    
-    
-    
+
+
 }
+*/
