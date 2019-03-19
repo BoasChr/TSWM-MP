@@ -11,8 +11,8 @@
 #flick{
   color: rgb(212, 41, 41);
   margin: 0%;
-  padding-top: 25%;
   font-size: 250%;
+  text-align: center;
 }
 
 #animation {
@@ -21,23 +21,21 @@
   padding-top: 0%;
   width: 99.75%;
   font-size: 400%;
-  background-color: yellow;
 }
 
 
 #mainSection {
-  position: relative;
-  display: block;
+  position: static;
+  display: inline-block;
   width: 99.75%;
   top: 2%;
-  background-color: purple;
 }
 
 #mainSection #left {
   position: static;
-  width: 15%;
+  float: left;
+  width: 10%;
   padding: 1%;
-  background-color: blue;
 }
 
 #mainSection #left .current{
@@ -56,14 +54,12 @@
 #mainSection #right{
   display: static;
   float: right;
-  width: 50%;
+  width: 85%;
   padding: 1%;
-  background-color: green;
 }
 
 #mainSection #right #gallery{
   width: 100%;
-  background-color: pink;
 }
 
 body {
@@ -100,8 +96,6 @@ input {
   padding: 6px 10px 6px 10px;
   font-size: 100%;
 }
-
-
 
 input[type=submit] {
   display: inline-block;
