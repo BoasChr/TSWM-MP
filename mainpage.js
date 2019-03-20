@@ -14,26 +14,34 @@ $(function() { // When site has loaded (document ready)
         var geoUrl = "https://geocode.xyz/" + lat + "," + long + "?json=1";
 
         // Ajax request of Json data
-        $.ajax({
+        var geoAjax = $.ajax({
             type: "GET",
             dataType: 'jsonp',
             url: geoUrl, 
             async: true,
             contentType: "application/json; charset=utf-8",
             
-           
-            success: function (data) { // If successful, store response into 'data'
-    
+
+            success: function (response) { // If successful, store response into 'data'
+            var region = response.region;
+            var city = region.substr(0, region.indexOf(' '));
+                
+                $('#results').html('Default search: ' + city);
+        
                 $.ajax('https://api.flickr.com/services/feeds/photos_public.gne', { // start a Flickr Ajax request ...
                     dataType: 'jsonp',
                     // ... using the 'city' attribute from the received data
-                    data: { "tags": data.city, "format": "json" },
+                    data: { "tags": city, "format": "json" },
                 });
             }
         });
+
+        geoAjax.fail(function() {
+            alert("Geolocation Ajax failed.");
+        });
     }
 
-    function fail() { // Failed to get Geolocation - not really of importance to us
+    function fail() { // Failed to get Geolocation - not really of importance to us'
     }
 });
 
