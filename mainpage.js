@@ -1,8 +1,8 @@
 $(function() { // When site has loaded (document ready)
     var lat, long; // declare variables
 
-    if (Modernizr.geolocation) { // If browser supports geolocation
-        navigator.geolocation.getCurrentPosition(success, fail); // Attempt to get geolocation
+    if (Modernizr.geolocation) { // Check if the browser supports geolocation (It should cause we included the Modernizr script in line 86 in mainpage.html)
+        navigator.geolocation.getCurrentPosition(success, fail); // Attempt to get geolocation (fail is e.g. if the user says no to request)
     }
     
     function success(position) { // If we were succesfull
@@ -10,23 +10,23 @@ $(function() { // When site has loaded (document ready)
         long = position.coords.longitude;
         lat = position.coords.latitude;
 
-        // Custom url to ping, using coordinates
+        // URL with longitude and lattiude variables saved in a variable. We set json = 1, to see the data in json format
         var geoUrl = "https://geocode.xyz/" + lat + "," + long + "?json=1";
 
-        // Ajax request of Json data
+        // Ajax request of Json data. We use the GET method, jsonp datatype, the URL defined above, set it to async so the rest of the page loads and eliminate special characters
         var geoAjax = $.ajax({
             type: "GET",
             dataType: 'jsonp',
             url: geoUrl, 
             async: true,
-            contentType: "application/json; charset=utf-8",
+            contentType: "application/json; charset=utf-8", //Only returns characters in UTF-8 format
             
 
-            success: function (response) { // If successful, store response into 'data'
-            var region = response.region;
-            var city = region.substr(0, region.indexOf(' '));
+            success: function (response) { // If we get a successful response back, store response into 'data'. We can access the data using response.
+            var region = response.region; // Data returned is: "Ålborg Kommune, North Denmark". 
+            var city = region.substr(0, region.indexOf(' ')); // Here we remove every character after the first ' '. Only the city name remains and we save it in the city variable
                 
-                $('#results').html('Default search: ' + city);
+                $('#results').html('Default search: ' + city); // Using jQuery to insert the cityname into the "results" element in mainpage.html
         
                 $.ajax('https://api.flickr.com/services/feeds/photos_public.gne', { // start a Flickr Ajax request ...
                     dataType: 'jsonp',
