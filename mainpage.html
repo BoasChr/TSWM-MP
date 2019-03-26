@@ -13,7 +13,7 @@
          
         <!--   (Angular) Search bar -->
         <form id="searchBar" ng-submit="myFunc()">                                                          <!-- custom error message for over max chars && clear error for new inputs -->
-        <input type="text" placeholder="What do you want to see?" ng-model="keyword" pattern=".{0,20}, [a-zA-Z0-9-]" oninvalid="this.setCustomValidity('No special characters (Input max 20)')" oninput="this.setCustomValidity('')" title="No more than 20 characters"> 
+        <input type="text" placeholder="What do you want to see?" ng-model="keyword" pattern="[a-zA-Z0-9-].{0,20}" oninvalid="this.setCustomValidity('No special characters (Input max 20)')" oninput="this.setCustomValidity('')" title="No more than 20 characters"> 
         <input type="submit" value="Search">
         </form>
     </div>       
